@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../imagens/ICON.png">
+
+
+    <!-- AUXILIARES -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cabecalho.css">
+    <link rel="stylesheet" href="../css/part-3.css">
+    <link rel="stylesheet" href="../css/part-4.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <title>WorkFinder</title>
+</head>
+
+<body onload="onPageLoad()">
+    <div class="layout">
+        <header>
+            <div class="cab-part-1 animate__animated animate__fadeIn animate__delay-1s">
+                <img class="animate__animated animate__fadeIn animate__delay-1s" src="../imagens/Logomarca.png" alt="Logo">
+
+                <ul class="animate__delay-2s">
+                    <a href="index.html">
+                        <li class="l1 font-1 animate__animated animate__fadeIn animate__delay-1s">Home</li>
+                    </a>
+                    <li class="l2 font-1 animate__animated animate__fadeIn animate__delay-1s" onclick="sobreScroll()">
+                        Sobre</li>
+                    <a href="allvagas.html">
+                        <li class="l3 font-1 animate__animated animate__fadeIn animate__delay-1s">Vagas</li>
+                    </a>
+                    <a id="cadVagaLink" href="cadEmpresa.html" target="_blank">
+                        <li id="cadVaga" class="l4 font-1 animate__animated animate__fadeIn animate__delay-1s">
+                            Nova Vaga</li>
+                    </a>
+                    <a id="login" href="login.html" target="_blank"><button
+                            class="l5 font-1 animate__animated animate__fadeIn animate__delay-1s">
+                            Login</button></a>
+
+                    <div id="user" class="dropdown">
+                        <i onclick="myFunction()"
+                            class=" bi bi-person-circle dropbtn l5 font-1 animate__animated animate__fadeIn animate__delay-1s"></i>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="#">Perfil <i class="bi bi-person"></i></a>
+                            <a href="#">Configurações <i class="bi bi-gear-fill"></i></a>
+                            <a href="#">Sair <i class="bi bi-door-closed"></i></a>
+                        </div>
+                    </div>
+                </ul>
+
+
+            </div>
+            <div class="cab-part-2">
+                <div class="imagem-fundo animate__animated animate__fadeInDown animate__slower">
+                    <img src="../imagens/fundo-header2.png" alt="Fundo-header">
+
+                    <button onclick="sobreScroll()"
+                        class="saiba-mais font-1 animate__animated animate__fadeInDown animate__delay-2s">Saiba Mais
+                        ></button>
+                    <div class="texto-img l5 font-1 animate__animated animate__fadeIn animate__delay-2s">
+                        <span>Conectando talento</span><br>
+                        às oportunidades <br>
+                        que impulsionam o <span>futuro.</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <main>
+            <section class="part-1">
+
+                <div class="titulo">
+                    <div class="titulo-vaga">
+                        <h1>Vagas em <span>Destaque</span></h1>
+                        <p class="descricao-part1">
+                            Encontre a oportunidade perfeita que se alinha com seus interesses e
+                            habilidades. De empregos em tecnologia à oportunidades na área de saúde.
+                        </p>
+                    </div>
+                    <div class="container-vagas">
+                        <div class="vagas-grid">
+
+                            <div class="card">
+                                <div class="foto-card">
+                                    <img src="../imagens/assai.png" alt="logo_empresa">
+                                    <h3>Assaí Atacadista</h3>
+                                </div>
+                                <h4>Estoquista</h4>
+                                <ul class="requisitos">
+                                    <li>CLT</li>
+                                    <li>Presencial</li>
+                                    <li>Área Comercial</li>
+                                </ul>
+
+                                <ul class="info-vaga">
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                                        </svg>
+                                        Picos-PI
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-building-fill-add" viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0" />
+                                            <path
+                                                d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-3.59 1.787A.5.5 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.5 4.5 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                                        </svg>
+                                        2 Vagas
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-currency-exchange" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 5a5 5 0 0 0 4.027 4.905 6.5 6.5 0 0 1 .544-2.073C3.695 7.536 3.132 6.864 3 5.91h-.5v-.426h.466V5.05q-.001-.07.004-.135H2.5v-.427h.511C3.236 3.24 4.213 2.5 5.681 2.5c.316 0 .59.031.819.085v.733a3.5 3.5 0 0 0-.815-.082c-.919 0-1.538.466-1.734 1.252h1.917v.427h-1.98q-.004.07-.003.147v.422h1.983v.427H3.93c.118.602.468 1.03 1.005 1.229a6.5 6.5 0 0 1 4.97-3.113A5.002 5.002 0 0 0 0 5m16 5.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0m-7.75 1.322c.069.835.746 1.485 1.964 1.562V14h.54v-.62c1.259-.086 1.996-.74 1.996-1.69 0-.865-.563-1.31-1.57-1.54l-.426-.1V8.374c.54.06.884.347.966.745h.948c-.07-.804-.779-1.433-1.914-1.502V7h-.54v.629c-1.076.103-1.808.732-1.808 1.622 0 .787.544 1.288 1.45 1.493l.358.085v1.78c-.554-.08-.92-.376-1.003-.787zm1.96-1.895c-.532-.12-.82-.364-.82-.732 0-.41.311-.719.824-.809v1.54h-.005zm.622 1.044c.645.145.943.38.943.796 0 .474-.37.8-1.02.86v-1.674z" />
+                                        </svg>
+                                        Não Informado
+                                    </li>
+                                </ul>
+                                <h4 class="acessar-card">Acessar</h4>
+                            </div>
+
+                            <div class="card">
+                                <div class="foto-card">
+                                    <img src="../imagens/atacadao_logo.jpeg" alt="">
+                                    <h3>Atacadão</h3>
+                                </div>
+
+                                <h4>Estoquista</h4>
+                                <ul class="requisitos">
+                                    <li>CLT</li>
+                                    <li>Presencial</li>
+                                    <li>Área Comercial</li>
+                                    <li>Pessoa com deficiencia (PCD)</li>
+                                </ul>
+
+                                <ul class="info-vaga">
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                                        </svg>
+                                        Picos-PI
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-building-fill-add" viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0" />
+                                            <path
+                                                d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-3.59 1.787A.5.5 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.5 4.5 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                                        </svg>
+                                        1 Vagas
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-currency-exchange" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 5a5 5 0 0 0 4.027 4.905 6.5 6.5 0 0 1 .544-2.073C3.695 7.536 3.132 6.864 3 5.91h-.5v-.426h.466V5.05q-.001-.07.004-.135H2.5v-.427h.511C3.236 3.24 4.213 2.5 5.681 2.5c.316 0 .59.031.819.085v.733a3.5 3.5 0 0 0-.815-.082c-.919 0-1.538.466-1.734 1.252h1.917v.427h-1.98q-.004.07-.003.147v.422h1.983v.427H3.93c.118.602.468 1.03 1.005 1.229a6.5 6.5 0 0 1 4.97-3.113A5.002 5.002 0 0 0 0 5m16 5.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0m-7.75 1.322c.069.835.746 1.485 1.964 1.562V14h.54v-.62c1.259-.086 1.996-.74 1.996-1.69 0-.865-.563-1.31-1.57-1.54l-.426-.1V8.374c.54.06.884.347.966.745h.948c-.07-.804-.779-1.433-1.914-1.502V7h-.54v.629c-1.076.103-1.808.732-1.808 1.622 0 .787.544 1.288 1.45 1.493l.358.085v1.78c-.554-.08-.92-.376-1.003-.787zm1.96-1.895c-.532-.12-.82-.364-.82-.732 0-.41.311-.719.824-.809v1.54h-.005zm.622 1.044c.645.145.943.38.943.796 0 .474-.37.8-1.02.86v-1.674z" />
+                                        </svg>
+                                        Não Informado
+                                    </li>
+                                </ul>
+                                <h4 class="acessar-card">Acessar</h4>
+                            </div>
+                            <div class="card">
+                                <div class="foto-card">
+                                    <img src="../imagens/açai-no-grau.png" alt="">
+                                    <h3>Açaí do Grau</h3>
+                                </div>
+
+                                <h4>Secretária</h4>
+                                <ul class="requisitos">
+                                    <li>CLT</li>
+                                    <li>Presencial</li>
+                                    <li>Área Administrativa</li>
+                                </ul>
+
+                                <ul class="info-vaga">
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                                        </svg>
+                                        Picos-PI
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-building-fill-add" viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0" />
+                                            <path
+                                                d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-3.59 1.787A.5.5 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.5 4.5 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                                        </svg>
+                                        1 Vagas
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-currency-exchange" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 5a5 5 0 0 0 4.027 4.905 6.5 6.5 0 0 1 .544-2.073C3.695 7.536 3.132 6.864 3 5.91h-.5v-.426h.466V5.05q-.001-.07.004-.135H2.5v-.427h.511C3.236 3.24 4.213 2.5 5.681 2.5c.316 0 .59.031.819.085v.733a3.5 3.5 0 0 0-.815-.082c-.919 0-1.538.466-1.734 1.252h1.917v.427h-1.98q-.004.07-.003.147v.422h1.983v.427H3.93c.118.602.468 1.03 1.005 1.229a6.5 6.5 0 0 1 4.97-3.113A5.002 5.002 0 0 0 0 5m16 5.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0m-7.75 1.322c.069.835.746 1.485 1.964 1.562V14h.54v-.62c1.259-.086 1.996-.74 1.996-1.69 0-.865-.563-1.31-1.57-1.54l-.426-.1V8.374c.54.06.884.347.966.745h.948c-.07-.804-.779-1.433-1.914-1.502V7h-.54v.629c-1.076.103-1.808.732-1.808 1.622 0 .787.544 1.288 1.45 1.493l.358.085v1.78c-.554-.08-.92-.376-1.003-.787zm1.96-1.895c-.532-.12-.82-.364-.82-.732 0-.41.311-.719.824-.809v1.54h-.005zm.622 1.044c.645.145.943.38.943.796 0 .474-.37.8-1.02.86v-1.674z" />
+                                        </svg>
+                                        Não Informado
+                                    </li>
+                                </ul>
+                                <h4 class="acessar-card">Acessar</h4>
+                            </div>
+                            <div class="card">
+                                <div class="foto-card">
+                                    <img src="../imagens/restaurante.avif" alt="">
+                                    <h3>Restaurant</h3>
+                                </div>
+
+                                <h4>Cozinheiro</h4>
+                                <ul class="requisitos">
+                                    <li>CLT</li>
+                                    <li>Presencial</li>
+                                    <li>Área de Produção</li>
+                                </ul>
+
+                                <ul class="info-vaga">
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                                        </svg>
+                                        Picos-PI
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-building-fill-add" viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0" />
+                                            <path
+                                                d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-3.59 1.787A.5.5 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.5 4.5 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                                        </svg>
+                                        1 Vagas
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-currency-exchange" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 5a5 5 0 0 0 4.027 4.905 6.5 6.5 0 0 1 .544-2.073C3.695 7.536 3.132 6.864 3 5.91h-.5v-.426h.466V5.05q-.001-.07.004-.135H2.5v-.427h.511C3.236 3.24 4.213 2.5 5.681 2.5c.316 0 .59.031.819.085v.733a3.5 3.5 0 0 0-.815-.082c-.919 0-1.538.466-1.734 1.252h1.917v.427h-1.98q-.004.07-.003.147v.422h1.983v.427H3.93c.118.602.468 1.03 1.005 1.229a6.5 6.5 0 0 1 4.97-3.113A5.002 5.002 0 0 0 0 5m16 5.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0m-7.75 1.322c.069.835.746 1.485 1.964 1.562V14h.54v-.62c1.259-.086 1.996-.74 1.996-1.69 0-.865-.563-1.31-1.57-1.54l-.426-.1V8.374c.54.06.884.347.966.745h.948c-.07-.804-.779-1.433-1.914-1.502V7h-.54v.629c-1.076.103-1.808.732-1.808 1.622 0 .787.544 1.288 1.45 1.493l.358.085v1.78c-.554-.08-.92-.376-1.003-.787zm1.96-1.895c-.532-.12-.82-.364-.82-.732 0-.41.311-.719.824-.809v1.54h-.005zm.622 1.044c.645.145.943.38.943.796 0 .474-.37.8-1.02.86v-1.674z" />
+                                        </svg>
+                                        Não Informado
+                                    </li>
+                                </ul>
+                                <h4 class="acessar-card">Acessar</h4>
+                            </div>
+
+                            <div class="card">
+                                <div class="foto-card">
+                                    <img src="../imagens/channels4_profile.jpg" alt="">
+
+                                    <h3>Virtex Telecom</h3>
+                                </div>
+
+                                <h4>Técnico de Rede</h4>
+                                <ul class="requisitos">
+                                    <li>CLT</li>
+                                    <li>Híbrido</li>
+                                    <li>Área da Tecnologia</li>
+                                </ul>
+
+                                <ul class="info-vaga">
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                                        </svg>
+                                        Picos-PI
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-building-fill-add" viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0" />
+                                            <path
+                                                d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-3.59 1.787A.5.5 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.5 4.5 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                                        </svg>
+                                        1 Vagas
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-currency-exchange" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 5a5 5 0 0 0 4.027 4.905 6.5 6.5 0 0 1 .544-2.073C3.695 7.536 3.132 6.864 3 5.91h-.5v-.426h.466V5.05q-.001-.07.004-.135H2.5v-.427h.511C3.236 3.24 4.213 2.5 5.681 2.5c.316 0 .59.031.819.085v.733a3.5 3.5 0 0 0-.815-.082c-.919 0-1.538.466-1.734 1.252h1.917v.427h-1.98q-.004.07-.003.147v.422h1.983v.427H3.93c.118.602.468 1.03 1.005 1.229a6.5 6.5 0 0 1 4.97-3.113A5.002 5.002 0 0 0 0 5m16 5.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0m-7.75 1.322c.069.835.746 1.485 1.964 1.562V14h.54v-.62c1.259-.086 1.996-.74 1.996-1.69 0-.865-.563-1.31-1.57-1.54l-.426-.1V8.374c.54.06.884.347.966.745h.948c-.07-.804-.779-1.433-1.914-1.502V7h-.54v.629c-1.076.103-1.808.732-1.808 1.622 0 .787.544 1.288 1.45 1.493l.358.085v1.78c-.554-.08-.92-.376-1.003-.787zm1.96-1.895c-.532-.12-.82-.364-.82-.732 0-.41.311-.719.824-.809v1.54h-.005zm.622 1.044c.645.145.943.38.943.796 0 .474-.37.8-1.02.86v-1.674z" />
+                                        </svg>
+                                        Não Informado
+                                    </li>
+                                </ul>
+
+                                <h4 class="acessar-card">Acessar</h4>
+                            </div>
+                            <div class="card">
+                                <div class="foto-card">
+                                    <img src="../imagens/engipec.jpeg" alt="">
+                                    <h3>Engipec</h3>
+                                </div>
+
+                                <h4>Estoquista</h4>
+                                <ul class="requisitos">
+                                    <li>PJ</li>
+                                    <li>Presencial</li>
+                                    <li>Área Comercial</li>
+                                    <li>CNH A</li>
+                                    <li>CNH B</li>
+                                </ul>
+
+                                <ul class="info-vaga">
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                                        </svg>
+                                        Picos-PI
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-building-fill-add" viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0" />
+                                            <path
+                                                d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-3.59 1.787A.5.5 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.5 4.5 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                                        </svg>
+                                        2 Vagas
+                                    </li>
+
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-currency-exchange" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 5a5 5 0 0 0 4.027 4.905 6.5 6.5 0 0 1 .544-2.073C3.695 7.536 3.132 6.864 3 5.91h-.5v-.426h.466V5.05q-.001-.07.004-.135H2.5v-.427h.511C3.236 3.24 4.213 2.5 5.681 2.5c.316 0 .59.031.819.085v.733a3.5 3.5 0 0 0-.815-.082c-.919 0-1.538.466-1.734 1.252h1.917v.427h-1.98q-.004.07-.003.147v.422h1.983v.427H3.93c.118.602.468 1.03 1.005 1.229a6.5 6.5 0 0 1 4.97-3.113A5.002 5.002 0 0 0 0 5m16 5.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0m-7.75 1.322c.069.835.746 1.485 1.964 1.562V14h.54v-.62c1.259-.086 1.996-.74 1.996-1.69 0-.865-.563-1.31-1.57-1.54l-.426-.1V8.374c.54.06.884.347.966.745h.948c-.07-.804-.779-1.433-1.914-1.502V7h-.54v.629c-1.076.103-1.808.732-1.808 1.622 0 .787.544 1.288 1.45 1.493l.358.085v1.78c-.554-.08-.92-.376-1.003-.787zm1.96-1.895c-.532-.12-.82-.364-.82-.732 0-.41.311-.719.824-.809v1.54h-.005zm.622 1.044c.645.145.943.38.943.796 0 .474-.37.8-1.02.86v-1.674z" />
+                                        </svg>
+                                        Não Informado
+                                    </li>
+                                </ul>
+                                <a href="infovaga.html" class="acessar-card">Acessar</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="vermais-card">
+                        <a href="allvagas.html">
+                            <button>
+                                Ver mais vagas >
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="part-2">
+                <div id="sobreId" class="content-part2">
+                    <div class="img-part-2">
+                        <img src="../imagens/imagem2-part2.png" alt="">
+                    </div>
+
+                    <div class="info-part-2">
+                        <article>
+                            <div class="titulo-part2">
+                                <h3>
+                                    <span style="color: var(--cor-1);">
+                                        Torne rápida</span> a busca <br>
+                                    por um trabalho!
+                                </h3>
+                            </div>
+                            <p class="sub-titulo">
+                                Nossa plataforma foi cuidadosamente projetada para oferecer uma ampla gama de recursos e
+                                ferramentas que tornam a busca por emprego não apenas mais rápida, mas também mais
+                                eficaz e personalizada. Com uma interface intuitiva e de fácil navegação, proporcionamos
+                                aos usuários uma experiência otimizada, onde cada etapa do processo de procura de
+                                emprego é facilitada.
+                            </p>
+
+                            <ul>
+                                <li><i class="bi bi-search" style="color: var(--cor-1);"></i> Pesquisa Avançada e
+                                    Filtros Personalizados</li>
+                                <li><i class="bi bi-person-add" style="color: var(--cor-1);"></i>Alertas de Vagas
+                                    Personalizadas</li>
+                                <li><i class="bi bi-mouse2-fill" style="color: var(--cor-1);"></i>Candidatura
+                                    Simplificada em Um Clique</li>
+                                <li><i class="bi bi-wechat" style="color: var(--cor-1);"></i>Atendimento ao Cliente Ágil
+                                    e Suporte Profissional</li>
+                                <li><i class="bi bi-shield-fill-check" style="color: var(--cor-1);"></i>Priorizamos a
+                                    segunraça do seus dados
+                                </li>
+                            </ul>
+                        </article>
+
+
+                        <div class="botoes-part-2">
+                            <a href="allvagas.html">
+                                <button class="olhar-Vagas">Olhar Vagas ></button>
+                            </a>
+                            <a href="cadUsuario.html" target="_blank">
+                                <button class="registar-se">Cadastre-se ></button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="part-3">
+
+                <div class="title">
+                    <h1>Uma <span>Experiência</span> jamais vista!</h1>
+                </div>
+
+                <div class="info-part-3">
+                    <div class="info-top">
+                        <div class="info-1-part-3">
+                            <div class="slot">
+                                <div class="cabecalho-slot">
+                                    <img src="../imagens/pesquisa2.png">
+                                    <h4>Recursos de Pesquisa Avançada</h4>
+                                </div>
+
+                                <p>Você pode <span>refinar</span> suas opções com filtros precisos, escolher a
+                                    localização ideal e
+                                    explorar categorias específicas de emprego.</p>
+                            </div>
+
+
+
+                            <div class="slot">
+                                <div class="cabecalho-slot">
+                                    <img src="../imagens/6528597.png">
+                                    <h4>Algoritmos de Correspondência Avançados</h4>
+                                </div>
+
+                                <p>Diga adeus à busca manual de empregos! Graças aos nossos algoritmos de
+                                    correspondência avançados, <span>conectamos</span> você às oportunidades de emprego
+                                    que realmente
+                                    importam.</p>
+                            </div>
+
+
+
+                            <div class="slot">
+                                <div class="cabecalho-slot">
+                                    <img src="../imagens/5269970.png">
+                                    <h4>Suporte e Recursos de Desenvolvimento Profissional</h4>
+                                </div>
+
+                                <p>Além de oferecer as melhores oportunidades de emprego, também fornecemos suporte e
+                                    recursos de <span>desenvolvimento profissional</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="info-bot">
+                        <div class="info-2-part-3">
+                            <div class="slot">
+                                <div class="cabecalho-slot">
+                                    <img src="../imagens/1694615.png">
+                                    <h4>Interface Intuitiva e Amigável</h4>
+                                </div>
+
+                                <p>Navegar em busca de emprego nunca foi <span> tão fácil</span>! Nosso site foi
+                                    cuidadosamente
+                                    projetado com uma interface <span> intuitiva e amigável</span> , garantindo que você
+                                    encontre as
+                                    informações que precisa sem qualquer dificuldade. </p>
+                            </div>
+
+
+
+                            <div class="slot">
+                                <div class="cabecalho-slot">
+                                    <img src="../imagens/2645897.png">
+                                    <h4>Notificações Personalizadas e Alertas de Vagas</h4>
+                                </div>
+
+                                <p>Configure suas preferências e <span>deixe-nos fazer o resto</span>. Sempre que uma
+                                    nova vaga que
+                                    corresponda ao seu perfil for publicada, você será o <span>primeiro a saber</span>,
+                                    garantindo
+                                    que nunca deixe passar uma chance valiosa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="part-4">
+
+                <div class="title">
+                    <h1>Veja o que nossos usuários dizem!</h1>
+                </div>
+
+                <div class="spaco-depoimento">
+                    <div class="card-depoimento">
+
+                        <div class="top">
+                            <img class="aspas" src="../imagens/aspas.png" alt="">
+                            <img class="foto-pessoa" src="../imagens/mulher.jpeg" alt="">
+                        </div>
+                        <div class="mid">
+                            <div class="nome-depoimento">
+                                <h3>Maria Oliveira</h3>
+                            </div>
+                            <div class="cargo-depoimento">
+                                Enfermeira
+                            </div>
+                        </div>
+                        <div class="bot">
+                            <p>
+                                Estou muito satisfeita com os resultados obtidos aqui. Graças a este site, sonsegui
+                                encontrar uma posição em um hospital renomado na minha cidade. Agradeço à equipe por
+                                tornar minha busca por emprego mais fácil.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-depoimento">
+
+                        <div class="top">
+                            <img class="aspas" src="../imagens/aspas.png" alt="">
+                            <img class="foto-pessoa" src="../imagens/homem.jpg" alt="">
+                        </div>
+                        <div class="mid">
+                            <div class="nome-depoimento">
+                                <h3>João Silva</h3>
+                            </div>
+                            <div class="cargo-depoimento">
+                                Desenvolvedor de Software
+                            </div>
+                        </div>
+                        <div class="bot">
+                            <p>
+                                Encontrei meu emprego dos sonhos através deste site! A plataforma é fácil de usar e me
+                                conectou com oportunidades incríveis na minha área. Recomendo a todos os profissionais
+                                em busca de novas oportunidades.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-depoimento">
+
+                        <div class="top">
+                            <img class="aspas" src="../imagens/aspas.png" alt="">
+                            <img class="foto-pessoa" src="../imagens/mulher2.jpeg" alt="">
+                        </div>
+                        <div class="mid">
+                            <div class="nome-depoimento">
+                                <h3>Bruna Santos</h3>
+                            </div>
+                            <div class="cargo-depoimento">
+                                Gerente de Vendas
+                            </div>
+                        </div>
+                        <div class="bot">
+                            <p>
+                                Este site é uma ferramenta indispensável para quem está procurando emprego na área de
+                                vendas. Encontrei várias oportunidades alinhadas com meu perfil profissional e consegui
+                                garantir uma nova posição em uma empresa lider no setor. Muito obrigado!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mais-depoimentos">
+                    <h4>ver mais depoimentos ></h4>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Info</h4>
+                    <ul class="links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Compressions</a></li>
+                        <li><a href="#">Customers</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Collection</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul class="links">
+                        <li><a href="#">Free Designs</a></li>
+                        <li><a href="#">Latest Designs</a></li>
+                        <li><a href="#">Themes</a></li>
+                        <li><a href="#">Popular Designs</a></li>
+                        <li><a href="#">Art Skills</a></li>
+                        <li><a href="#">New Uploads</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="links">
+                        <li><a href="#">Customer Agreement</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Media Kit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>
+                        Subscribe to our newsletter for a weekly dose
+                        of news, updates, helpful tips, and
+                        exclusive offers.
+                    </p>
+                    <form action="#">
+                        <input type="text" placeholder="Your email" required>
+                        <button type="submit">SUBSCRIBE</button>
+                    </form>
+                    <div class="icons">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <span style="text-align: center; background: #2f2010; color: white">
+            Copyright &copy; 2024 WorkFinder All Rights Reserved
+        </span>
+    </div>
+
+    <script src="../script/script.js"></script>
+    <script src="../script/userScript.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="imagens/ICON.png">
+
+
+    <!-- AUXILIARES -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cabecalho.css">
+    <link rel="stylesheet" href="../css/part-3.css">
+    <link rel="stylesheet" href="../css/part-4.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/user.css">
+
+    <title>WorkFinder</title>
+</head>
+<body onload="onPageLoad()">
+    <header>
+        <div class="cab-part-1 animate__animated animate__fadeIn animate__delay-1s">
+            <img class="animate__animated animate__fadeIn animate__delay-1s" src="../imagens/Logomarca.png" alt="Logo">
+
+            <ul class="animate__delay-2s">
+                <a href="index.html">
+                    <li class="l1 font-1 animate__animated animate__fadeIn animate__delay-1s">Home</li>
+                </a>
+                <li class="l2 font-1 animate__animated animate__fadeIn animate__delay-1s" onclick="sobreScroll()">
+                    Sobre</li>
+                <a href="allvagas.html">
+                    <li class="l3 font-1 animate__animated animate__fadeIn animate__delay-1s">Vagas</li>
+                </a>
+                <a id="cadVagaLink" href="cadEmpresa.html" target="_blank">
+                    <li id="cadVaga" class="l4 font-1 animate__animated animate__fadeIn animate__delay-1s">
+                        Nova Vaga</li>
+                </a>
+                <a id="login" href="login.html" target="_blank"><button
+                        class="l5 font-1 animate__animated animate__fadeIn animate__delay-1s">
+                        Login</button></a>
+
+                <div id="user" class="dropdown">
+                    <i onclick="myFunction()"
+                        class=" bi bi-person-circle dropbtn l5 font-1 animate__animated animate__fadeIn animate__delay-1s"></i>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Perfil <i class="bi bi-person"></i></a>
+                        <a href="#">Configurações <i class="bi bi-gear-fill"></i></a>
+                        <a href="#">Sair <i class="bi bi-door-closed"></i></a>
+                    </div>
+                </div>
+            </ul>
+        </div>
+
+    </header>
+    <main>
+        <section class="profile">
+            <div class="profile-picture">
+                <img src="../imagens/engipec.jpeg" alt="Foto do Usuário">
+            </div>
+            <div class="profile-info">
+                <h1 id="profile-name">Engipec</h1>
+                <p id="profile-email">email@usuario.com</p>
+                <p id="profile-dob">01/01/1990</p>
+                <p id="profile-bio"> Engipec é uma empresa líder no setor de engenharia e construção, reconhecida pela
+                    excelência e inovação em seus projetos. Com uma trajetória sólida e um compromisso
+                    inabalável com a qualidade, a Engipec se destaca por entregar soluções completas e
+                    integradas, que abrangem desde o planejamento e concepção até a execução e gestão de obras
+                    de grande porte.
+
+                    Nossa missão é transformar ideias em realidade, sempre pautados pela sustentabilidade,
+                    eficiência e segurança. Acreditamos na importância de cada detalhe e na colaboração contínua
+                    com nossos clientes para atender e superar suas expectativas.
+
+                    Com uma equipe altamente qualificada e dedicada, utilizamos tecnologias avançadas e práticas
+                    modernas de gestão para garantir a entrega de projetos dentro dos prazos estipulados e com a
+                    máxima qualidade. A Engipec está constantemente inovando e se adaptando às novas tendências
+                    e exigências do mercado, mantendo-se na vanguarda do setor.
+
+                    Valorizamos o desenvolvimento profissional de nossos colaboradores e oferecemos um ambiente
+                    de trabalho dinâmico, inclusivo e desafiador. Na Engipec, cada projeto é uma oportunidade
+                    para criar um impacto positivo e duradouro, reafirmando nosso compromisso com a construção
+                    de um futuro melhor.</p>
+            </div>
+            <div class="profile-actions">
+                <button id="edit-btn">Editar Perfil</button>
+                <button id="save-btn" style="display: none;">Salvar Alterações</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="../script/script.js"></script>
+    <script src="../script/perfilPage.js"></script>
+    <script src="../script/userScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+.info-vagas-area {
+    /* height: 100vh; */
+    background-color: rgb(221, 221, 221);
+    padding: 40px 80px;
+}
+
+.titulo-pagina-vaga
+{
+    margin-top: 60px;
+    text-align: center;
+    font-family: Roboto Mono, sans-serif;
+
+    span{
+        color: var(--cor-1);
+    }
+    h1{
+        font-size: 40px;
+        color: #333;
+    }
+}
+
+.info-vaga-part1
+{
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid rgb(243, 243, 243); */
+    padding: 10px 20px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px;
+
+    .left-part1{
+        display: flex;
+        gap: 20px;
+
+        img{
+            height: 10em;
+            align-self: center;
+        }
+        .text-container
+        {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            gap: 2px;
+
+            h2, h4
+            {
+                /* border: 1px solid; */
+                /* text-align: center; */
+                font-weight: Roboto Mono, sans-serif;
+                height: 50px;
+                margin: 0;
+            }
+            h2
+            {
+                font-weight: 600;
+                font-size: 40px;
+            }
+            h4
+            {
+                text-align: start;
+                font-weight: 400;
+            }
+
+            .vaga-details
+            {
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+
+                li{
+                    margin: 5px 5px;
+                    padding: 0 10px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    background-color: rgba(200, 98, 20, 0.586);
+                    border-radius: 20px;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .right-part1
+    {
+        display: flex;
+        button{
+            /* margin: 15% 0; */
+            height: 60px;
+            width: 15em;
+            /* border: 1px solid; */
+            border: none;
+            border-radius: 5px;
+            background-color: var(--cor1) ;
+            color: white;
+            /* font-weight: bold; */
+            font-size: 20px;
+            transition: .2s;
+            align-self: center;
+        }
+        
+        button:hover
+        {
+            color: white;
+            background-color: var(--cor-2);
+            /* transform: scale(1.02); */
+        }
+        button:focus
+        {
+            outline-style: none;
+        }
+    }
+}
+
+.info-vaga-part2
+{
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 20px 100px;
+        
+        p{
+            text-align: justify;
+            margin: 0  10px;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .empresa-vaga{
+            margin: 20px 0;
+        }
+
+        .info-vaga
+        {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            ul{
+                margin: 0 10px;
+            }
+            h4{
+                margin-top: 20px;
+                width: 100%;
+            }
+            
+            li{
+                list-style: none;
+                font-weight: bold;
+            }
+            span{
+                margin-left: 10px;
+                font-weight: normal;
+            }
+            
+        }
+
+        .ability-benefits
+        {
+            h4{
+                margin-top: 30px;
+            }
+            ul{
+                margin-left: 30px;
+            }
+        }
+}
+
+.botao-aplicar-vaga
+{
+    margin-top: 20px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+
+
+    button{
+        height: 50px;
+        width: 500px;
+
+        color: white;
+        background-color: rgb(9, 143, 9);
+        border:none;
+        font-size: 20px;
+        border-radius: 7px;
+        transition: .2s;
+    }
+
+    button:hover{
+        background-color: rgb(0, 106, 0);
+    }
+
+    button:focus{
+        outline-style: none;
+    }
+}
