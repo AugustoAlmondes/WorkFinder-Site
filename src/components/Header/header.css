@@ -1,0 +1,228 @@
+header
+{
+    background-color: black;
+}
+
+
+.cab-part-1 {
+    background-color: var(--cinza);
+    /* padding-bottom: 100px; */
+    background-color: black;
+    /* box-shadow: 100px 0px 100px black,
+        -100px 0px 100px black; */
+    color: white;
+    display: flex;
+    justify-content: space-around;
+
+    img {
+        --animate-delay: 1.4s;
+        height: 120px;
+        /* margin-left: 60px; */
+        /* padding-bottom: 100px; */
+    }
+
+    .l1 {
+        --animate-delay: 1.6s;
+    }
+
+    .l2 {
+        --animate-delay: 1.8s;
+    }
+
+    .l3 {
+        --animate-delay: 1.9s;
+    }
+
+    .l4 {
+        --animate-delay: 2s;
+    }
+
+    .l5 {
+        --animate-delay: 2.1s;
+    }
+
+    ul {
+        margin: 0;
+        right: 0;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .bi-person-circle {
+        font-size: 45px;
+    }
+
+    ul li{
+        list-style: none;
+        transition: .1s;
+        a {
+            color: white;
+            margin: 0 30px;
+            font-size: 17px;
+        }
+    }
+
+    ul li:hover {
+        color: var(--cor2);
+        text-shadow: 0 0 10px var(--cor2);
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+    ul button {
+        /* margin: 0 60px; */
+        width: 120px;
+        height: 50px;
+        font-size: 17px;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 20px;
+        color: white;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    ul button:hover {
+        color: white;
+        font-weight: bold;
+        background-color: var(--cor1);
+        box-shadow: 0 0 30px var(--cor1);
+        border: 1px solid var(--cor1);
+        transform: scale(1.1);
+    }
+}
+
+/* CABECALHO PARTE 2 */
+
+.cab-part-2 {
+
+    min-height: 90vh;
+    /* transform: translateY(-60px); */
+    /* background-color: black; */
+    /* padding-bottom: 15vh; */
+    background: linear-gradient(0deg, var(--cinza) 0%, rgba(0, 0, 0, 1) 80%);
+    background-color: var(--cinza);
+
+    .imagem-fundo img {
+        width: 100%;
+    }
+}
+
+.imagem-fundo {
+    --animate-duration: .6s;
+    background-color: black;
+    box-shadow: 0 30px 50px black,
+        100px 0px 50px black,
+        -100px 0px 50px black;
+    position: relative;
+
+    button {
+        width: 150px;
+        height: 50px;
+        position: absolute;
+        bottom: 12vh;
+        left: 10vw;
+        background-color: transparent;
+        border: 2px solid #ffffff;
+        border-radius: 20px;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 17px;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    .texto-img {
+        width: max-content;
+        /* height: 35vh; */
+        /* border: 1px solid white; */
+        position: absolute;
+        top: 45%;
+        /* left: 30%; */
+        font-family: Roboto Mono, sans-serif;
+        font-weight: 200;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 4em;
+        /* font-size: clamp(50px,4vw, 32px); */
+        text-align: left;
+
+        span {
+            color: var(--cor0);
+            font-weight: 500;
+        }
+    }
+
+}
+
+.imagem-fundo,
+.imagem-fundo img {
+    border-radius: 0 0 100px 100px;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    /* visibility: none; */
+    /* display:none; */
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: .3s;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+    color: var(--cor2);
+    text-shadow: 0 0 5px ;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 10px;
+    background-color: #535353;
+    min-width: 160px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    text-align: end;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: .2s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #252525;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
