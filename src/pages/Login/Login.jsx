@@ -5,7 +5,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Estilos do Toast
 import axios from 'axios';
 
-import './Login.css'
+import './login.css'
 import CadUser from "../../components/CadUser/CadUser";
 import LoginUser from "../../components/LoginUser/LoginUser";
 import CadBusiness from "../../components/CadBusiness/CadBusiness";
