@@ -1,0 +1,176 @@
+.card {
+    display: grid;
+    grid-template-rows: auto auto auto 1.2rem auto;
+    /* Estrutura fixa do grid */
+    width: 100%;
+    padding: 1.5rem;
+    height: 400px;
+    /* Altura fixa */
+    background-color: var(--cinza-claro);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card h4 {
+    font-size: 0.8rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Área do cabeçalho (empresa) */
+.header {
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.company {
+    font-size: 1.2rem;
+    /* Reduzido para caber melhor */
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+/* Área da habilidade */
+.ability {
+    font-weight: 200;
+    text-align: center;
+    font-size: 1rem;
+    /* Reduzido */
+    margin: 0.25rem 0;
+    color: #e0e0e0;
+    min-height: 1.5rem;
+}
+
+/* Área do título */
+.title {
+    text-align: center;
+    font-size: 1.1rem;
+    /* Reduzido */
+    margin: 0.25rem 0;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Área das tags (contrato, modalidade, área) */
+.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    min-height: 2rem;
+}
+
+.tag {
+    margin: 0;
+    padding: 0.25rem 0.75rem;
+    font-weight: 300;
+    max-height: 30px;
+    font-size: 0.75rem;
+    /* Reduzido */
+    background-color: rgb(111, 85, 65);
+    border-radius: 20px;
+    /* white-space: nowrap; */
+}
+
+/* Área dos detalhes (local, vagas, salário) */
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    gap: 0.3rem;
+    /* Reduzido */
+    flex-grow: 1;
+    /* Ocupa o espaço disponível */
+    justify-content: flex-end;
+    /* Empurra o conteúdo para cima */
+}
+
+.detailItem {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    width: 100%;
+    font-size: 0.9rem;
+    /* Reduzido */
+}
+
+.icon {
+    color: white;
+    font-size: 1rem;
+    /* Reduzido */
+    margin-right: 0.5rem;
+    /* Reduzido */
+    flex-shrink: 0;
+}
+
+/* Área do botão (sempre fixa na base) */
+.accessButton {
+    width: 70%;
+    height: 2.5rem;
+    margin-top: auto;
+    /* Empurra para baixo */
+    place-self: center;
+    text-align: center;
+    border: 1px solid var(--cor-1);
+    font-size: 1rem;
+    background-color: var(--cor-1);
+    border-radius: 10px;
+    padding: 0.5rem 0;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accessButton:hover {
+    color: white;
+    background-color: #9d5b16;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card {
+        height: auto;
+        min-height: 380px;
+        /* Aumentado para garantir espaço */
+        padding: 1rem;
+    }
+
+    .header {
+        height: auto;
+    }
+
+    .accessButton {
+        width: 90%;
+        margin-top: 1rem;
+        /* Espaço adicional em mobile */
+    }
+}

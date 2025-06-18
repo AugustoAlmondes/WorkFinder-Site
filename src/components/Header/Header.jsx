@@ -1,86 +1,115 @@
-import './header.css'
-import Logo from '../../assets/Logomarca.png'
-// import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom';
+import { motion as MOTION } from "motion/react";
+import { Link } from "react-router-dom";
+import {
+    FiUser,
+    FiSettings,
+    FiLogOut,
+    FiHome,
+    FiInfo,
+    FiBriefcase,
+    FiPlusSquare
+} from "react-icons/fi";
+import styles from "./Header.module.css";
+import Logo from "../../assets/Logomarca.png";
 
 export default function Header({ typeUser, fezLogin, handleLogout }) {
-    // typeUser = Tipo de usuário - setTypeUser = função para alterar o tipo  de usuári
+    const itemVariants = {
+        hidden: { opacity: 0, y: -20 },
+        visible: (i) => ({
+            opacity: 1,
+            y: 0,
+            transition: { delay: 0.1 * i }
+        })
+    };
 
     return (
-        <header>
-            <div className="cab-part-1 animate__animated animate__fadeIn animate__delay-1s">
-                <img className="animate__animated animate__fadeIn animate__delay-1s" src={Logo} alt="Logo" />
+        <header className={styles.header}>
+            <MOTION.div
+                className={styles.container}
+                initial="hidden"
+                animate="visible"
+            >
+                <MOTION.img
+                    src={Logo}
+                    alt="Logo"
+                    className={styles.logo}
+                    variants={itemVariants}
+                    custom={0}
+                />
 
-                <ul className="animate__delay-2s">
-                    <li className="l1 font-1 animate__animated animate__fadeIn animate__delay-1s">
-                        {/* <a href="index.html">Home</a> */}
-                        <Link to={"/"}>Home</Link>
-                    </li>
-                    <li className="l2 font-1 animate__animated animate__fadeIn animate__delay-1s" >
-                        {
-                            fezLogin ?
-                                (
-                                    <Link to="/" onClick={handleLogout}>Sair</Link>
-                                    // 'Sair'
-                                ) :
-                                (
-                                    <p style={{ margin: '0' }}>Sobre</p>
-                                )
-                        }
-                    </li>
+                <ul className={styles.navList}>
+                    <MOTION.li variants={itemVariants} custom={1}>
+                        <Link
+                        style={{textDecoration:'none'}}
+                         to="/" className={styles.navLink}>
+                            <FiHome /> Home
+                        </Link>
+                    </MOTION.li>
 
-                    {
-                        (typeUser != 0 || !fezLogin) ?
-                            (
-                                <li className="l3 font-1 animate__animated animate__fadeIn animate__delay-1s">
-                                    <Link to="/allvacany">Vagas</Link>
-                                </li>
-                            ) : (
-                                <li style={{ display: 'none' }}></li>
-                            )
-                    }
+                    <MOTION.li variants={itemVariants} custom={2}>
+                        {fezLogin ? (
+                            <Link
+                            style={{textDecoration:'none'}}
+                             to="/" onClick={handleLogout} className={styles.navLink}>
+                                Sair
+                            </Link>
+                        ) : (
+                            <p className={styles.navLink} style={{ margin: 0 }}>
+                                <FiInfo /> Sobre
+                            </p>
+                        )}
+                    </MOTION.li>
 
-                    {(typeUser === 0 || typeUser === 2 || !fezLogin) &&
-                        (
-                            <li id="cadVaga" className="l4 font-1 animate__animated animate__fadeIn animate__delay-1s">
-                                <Link to="/vacany">
-                                    Nova Vaga
-                                </Link>
-                            </li>
-                        )
-                    }
+                    {(typeUser != 0 || !fezLogin) && (
+                        <MOTION.li variants={itemVariants} custom={3}>
+                            <Link
+                            style={{textDecoration:'none'}}
+                             to="/allvacany" className={styles.navLink}>
+                                <FiBriefcase /> Vagas
+                            </Link>
+                        </MOTION.li>
+                    )}
+
+                    {(typeUser === 0 || typeUser === 2 || !fezLogin) && (
+                        <MOTION.li variants={itemVariants} custom={4}>
+                            <Link
+                            style={{textDecoration:'none'}}
+                             to="/vacany" className={styles.navLink}>
+                                <FiPlusSquare /> Nova Vaga
+                            </Link>
+                        </MOTION.li>
+                    )}
 
                     {!fezLogin ? (
-                        <li className="l5 font-1 animate__animated animate__fadeIn animate__delay-1s">
-                            {/* <button className="l5 font-1">Login</button> */}
-                            <Link to="/login">
-                                <button>Login</button>
+                        <MOTION.li variants={itemVariants} custom={5}>
+                            <Link
+                            style={{textDecoration:'none'}}
+                             to="/login">
+                                <button className={styles.loginButton}>Login</button>
                             </Link>
-                        </li>
-                    ) :
-                        (
-                            <div id="user" className="dropdown">
-                                <i className="bi bi-person-circle dropbtn l5 font-1 animate__animated animate__fadeIn animate__delay-1s"></i>
-                                <div id="myDropdown" className="dropdown-content">
-                                    <a href="#">Perfil <i className="bi bi-person"></i></a>
-                                    <a href="#">Configurações <i className="bi bi-gear-fill"></i></a>
-                                    <a href="#">Sair <i className="bi bi-door-closed"></i></a>
+                        </MOTION.li>
+                    ) : (
+                        <MOTION.li variants={itemVariants} custom={5}>
+                            <div className={styles.dropdown}>
+                                <button className={styles.dropdownButton}>
+                                    <FiUser />
+                                </button>
+                                <div className={styles.dropdownContent}>
+                                    <a href="#" className={styles.dropdownItem}>
+                                        Perfil <FiUser />
+                                    </a>
+                                    <a href="#" className={styles.dropdownItem}>
+                                        Configurações <FiSettings />
+                                    </a>
+                                    <a href="#" className={styles.dropdownItem} onClick={handleLogout}>
+                                        Sair <FiLogOut />
+                                    </a>
                                 </div>
                             </div>
-                        )
-                    }
-
-
+                        </MOTION.li>
+                    )}
                 </ul>
-            </div>
+            </MOTION.div>
         </header>
-    )
-
+    );
 }
-
-// Header.propTypes = {
-//     typeUser: PropTypes.number.isRequired,
-//     fezLogin: PropTypes.bool.isRequired,
-// };
-
-// export default Header

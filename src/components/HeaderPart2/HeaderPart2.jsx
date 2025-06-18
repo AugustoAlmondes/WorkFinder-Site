@@ -1,15 +1,62 @@
-import FundoHeader from '../../assets/fundo-header2.png'
-
+import { motion as MOTION } from "motion/react";
+import { FiArrowRight } from "react-icons/fi";
+import FundoHeader from '../../assets/fundo-header2.png';
+import styles from './HeaderPart2.module.css';
 
 export default function HeaderPart2() {
+    const containerVariants = {
+        hidden: { opacity: 0, y: -20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1.5,
+                ease: "easeOut"
+            }
+        }
+    };
+
+    const buttonVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: 0.8,
+                duration: 0.8,
+                ease: "easeOut"
+            }
+        },
+        hover: {
+            scale: 1.1,
+            transition: { duration: 0.3 }
+        }
+    };
+
     return (
-        <div className="cab-part-2">
-            <div className="imagem-fundo animate__animated animate__fadeInDown animate__slower">
-                <img src={FundoHeader} alt="Fundo-header" />
-                <button className="saiba-mais font-1 animate__animated animate__fadeInDown animate__delay-2s">
-                    Saiba Mais {'>'}
-                </button>
-            </div>
-        </div>
-    )
+        <MOTION.div
+            className={styles.heroSection}
+            initial="hidden"
+            animate="visible"
+        >
+            <MOTION.div
+                className={styles.heroImageContainer}
+                variants={containerVariants}
+            >
+                <img
+                    src={FundoHeader}
+                    alt="Fundo-header"
+                    className={styles.heroImage}
+                />
+            </MOTION.div>
+            <MOTION.button
+                className={styles.ctaButton}
+                variants={buttonVariants}
+                whileHover="hover"
+            >
+                Saiba Mais <FiArrowRight />
+            </MOTION.button>
+
+        </MOTION.div>
+    );
 }

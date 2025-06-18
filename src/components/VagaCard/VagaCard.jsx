@@ -1,82 +1,88 @@
-import './cardVaga.css'
+import { motion as MOTION } from "motion/react";
 import { IoPersonAdd } from "react-icons/io5";
 import { GiPositionMarker } from "react-icons/gi";
 import { FaCoins } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
-// import Assai from '../../assets/assai.png'
-// import PropTypes from 'prop-types'
+import styles from './VagaCard.module.css';
 
 export default function VagaCard({ data, fezlogin }) {
+    const formatSalary = (salary) => {
+        return salary.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+    };
 
-    const styleIcons = {
-        stye: {
-            color: 'white',
-            fontSize: '20px',
-            marginRight: '10px',
-            marginBotto: '10px'
+    const cardVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.5,
+                ease: "easeOut"
+            }
+        },
+        hover: {
+            y: -5,
+            transition: {
+                duration: 0.3,
+                ease: "easeOut"
+            }
         }
-    }
+    };
+
     return (
-        <>
-            <div className="card">
-                <div className="foto-card">
-                    <h2>{data.enterprise}</h2>
-                </div>
-                <h4>{data.ability}</h4>
-                <h3>{data.title}</h3>
-                <ul className="requisitos">
-                    <li>{data.contractType}</li>
-                    <li>{data.modality}</li>
-                    <li>{data.areaActivity}</li>
-                </ul>
-
-                <ul className="info-vaga">
-                    <li>
-                        <GiPositionMarker style={styleIcons.stye} />
-                        {data.local}
-                    </li>
-
-                    <li>
-                        <IoPersonAdd style={styleIcons.stye} />
-                        {data.amount} Vagas
-                    </li>
-
-                    <li>
-                        <FaCoins style={styleIcons.stye} />
-                        {
-                            data.salary.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
-                        }
-                    </li>
-                </ul>
-                {
-                    fezlogin ?
-                        (<Link
-                            to={{
-                                pathname: "/infojob",
-                            }}
-                            state={{ jobData: data }}
-                            style={{ textDecoration: 'none' }}
-                        >
-
-                            <h4 className="acessar-card">Acessar</h4>
-                        </Link>)
-                        :
-                        (<Link
-                            to={{
-                                pathname: "/login",
-                            }}
-                            state={{ jobData: data }}
-                            style={{ textDecoration: 'none' }}
-                        >
-                            <h4 className="acessar-card">Acessar</h4>
-                        </Link>)
-                }
+        <MOTION.div
+            className={styles.card}
+            variants={cardVariants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+            layout
+        >
+            <div className={styles.header}>
+                <h2 className={styles.company}>{data.enterprise}</h2>
             </div>
-        </>
+
+            <h4 className={styles.ability}>{data.ability}</h4>
+            <h3 className={styles.title}>{data.title}</h3>
+
+            <ul className={styles.tags}>
+                {[data.contractType, data.modality, data.areaActivity].map((tag, index) => (
+                    <li key={index} className={styles.tag}>
+                        {tag}
+                    </li>
+                ))}
+            </ul>
+
+            <ul className={styles.details}>
+                <li className={styles.detailItem}>
+                    <GiPositionMarker className={styles.icon} />
+                    {data.local}
+                </li>
+                <li className={styles.detailItem}>
+                    <IoPersonAdd className={styles.icon} />
+                    {data.amount} Vagas
+                </li>
+                <li className={styles.detailItem}>
+                    <FaCoins className={styles.icon} />
+                    {formatSalary(data.salary)}
+                </li>
+            </ul>
+
+            <Link
+                to={{
+                    pathname: fezlogin ? "/infojob" : "/login",
+                }}
+                style={{ textDecoration: "none" }}
+                state={{ jobData: data }}
+                className={styles.accessButton}
+            >
+                <MOTION.span
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    Acessar
+                </MOTION.span>
+            </Link>
+        </MOTION.div>
     );
 }
-
-// VagaCard.propTypes = {
-//     nomeEmpresaVaga: PropTypes.arrayOf(PropTypes.string),
-//     cargoVaga: PropTypes.arrayOf(PropTypes.string)
-// };
