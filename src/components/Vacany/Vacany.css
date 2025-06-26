@@ -1,0 +1,80 @@
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.foto-card h3{
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+.requisitos,
+.info-vaga {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requisitos li,
+.info-vaga li {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.info-vaga li span {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.acessar-card h4{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--cor0);
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.acessar-card h4:hover {
+    background-color: var(--cor1);
+}
+
+/* Responsivo */
+@media screen and (max-width: 600px) {
+    .card {
+        padding: 15px;
+    }
+
+    .foto-card {
+        font-size: 1rem;
+    }
+
+    .requisitos li,
+    .info-vaga li {
+        font-size: 0.85rem;
+    }
+
+    .acessar-card {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}

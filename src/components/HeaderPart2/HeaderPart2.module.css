@@ -1,0 +1,78 @@
+.heroSection {
+    min-height: 90vh;
+    background: linear-gradient(0deg, var(--cinza) 0%, rgba(0, 0, 0, 1) 80%);
+    position: relative;
+    overflow: hidden;
+}
+
+.heroImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0 0 100px 100px;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8),
+                100px 0px 50px rgba(0, 0, 0, 0.8),
+                -100px 0px 50px rgba(0, 0, 0, 0.8);
+}
+
+.ctaButton {
+    position: absolute;
+    bottom: 10vh;
+    left: 10%;
+    width: 180px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: .9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .ctaButton {
+        bottom: 8vh;
+        left: 5%;
+        width: 160px;
+        height: 35px;
+        font-size: 0.85rem;
+    }
+
+    .heroImage {
+        border-radius: 0 0 60px 60px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .heroSection {
+        /* min-height: 50vh; */
+        display: none;
+    }
+
+    .heroImage {
+        border-radius: 0 0 30px 30px;
+        box-shadow: none;
+    }
+
+    .ctaButton {
+        bottom: 5vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+}

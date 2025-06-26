@@ -1,27 +1,12 @@
-# WorkFinder
+# React + Vite
 
-WorkFinder é uma aplicação desenvolvida para [objetivo do projeto: exemplo, conectar freelancers a oportunidades de trabalho], construída com **React** e **Vite** para uma experiência de desenvolvimento rápida e eficiente.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Funcionalidades
+Currently, two official plugins are available:
 
-- **Cadastro de Usuários**: Registre-se e crie seu perfil profissional.
-- **Busca de Oportunidades**: Navegue por várias ofertas de trabalho disponíveis.
-- **Integração com Backend**: Conectado a uma API para dados em tempo real.
-- **Design Responsivo**: A interface é adaptada para diferentes dispositivos.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Tecnologias Utilizadas
+## Expanding the ESLint configuration
 
-- **Frontend**: React, Vite
-- **Backend**: [detalhe do backend se houver]
-- **Controle de Qualidade**: ESLint, com configuração personalizada em `eslint.config.js`
-
-## Como Rodar o Projeto
-
-### Pré-requisitos
-- Node.js (>= versão necessária)
-- npm ou yarn
-
-### Passos para Rodar
-1. Clone o repositório:
-   
-   git clone [URL do repositório]
+If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

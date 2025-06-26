@@ -1,0 +1,248 @@
+/* Mobile First */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto Mono, sans-serif;
+}
+
+.part-1 {
+    color: white;
+    background-color: var(--cinza);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.titulo-vaga {
+    text-align: center;
+    font-size: clamp(18px, 5vw, 25px);
+    font-weight: 500;
+}
+
+.titulo-vaga p {
+    font-size: clamp(14px, 4vw, 20px);
+    font-weight: 200;
+}
+
+.titulo-vaga h1 {
+    margin: 20px 0;
+}
+
+.titulo-vaga span {
+    color: var(--cor-1);
+}
+
+.vagas-grid {
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.vermais-card {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.vermais-card button {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid var(--cor-1);
+    color: var(--cor-1);
+    transition: .2s;
+}
+
+.vermais-card button:hover {
+    background-color: var(--cor-1);
+    color: var(--cinza);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.part-2 {
+    min-height: 100vh;
+    background-color: black;
+    background-image: url(../assets/imagem-part2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.content-part2 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+    animation: appear ease-in-out;
+}
+
+.img-part-2 img {
+    max-width: 100%;
+    height: auto;
+    animation: go-back 2s ease-in-out infinite alternate;
+}
+
+.info-part-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.titulo-part2 h3 {
+    font-size: clamp(24px, 6vw, 50px);
+    border-bottom: 4px solid var(--cor-1);
+}
+
+.info-part-2 article ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-part-2 article ul li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-part-2 article ul i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #ff8000;
+}
+
+.botoes-part-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.botoes-part-2 button {
+    height: 45px;
+    width: 80%;
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* Parte 3 */
+
+.part-3 {
+    padding: 50px 20px;
+    background-color: rgb(221, 221, 221);
+}
+
+.part-3 .title h1 {
+    text-align: center;
+    font-size: clamp(20px, 5vw, 30px);
+}
+
+.info-1-part-3, .info-2-part-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.slot {
+    width: 100%;
+    max-width: 350px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.slot img {
+    height: 40px;
+}
+
+.slot p {
+    text-align: justify;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .content-part2 {
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .info-part-2 {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .info-1-part-3, .info-2-part-3 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .botoes-part-2 {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .botoes-part-2 button {
+        margin: 0 10px;
+    }
+
+    .slot {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .part-1 {
+        padding: 0 100px;
+    }
+
+    .titulo-vaga h1 {
+        margin: 50px 0;
+    }
+
+    .vagas-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .content-part2 {
+        grid-template-columns: 1fr 2fr;
+        display: grid;
+    }
+
+    .part-3 {
+        padding: 100px 40px;
+    }
+}
+
+@keyframes go-back {
+    to {
+        transform: translateY(-30px);
+    }
+    from {
+        transform: translateY(30px);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .img-part-2 img {
+        display: none;
+    }
+}
