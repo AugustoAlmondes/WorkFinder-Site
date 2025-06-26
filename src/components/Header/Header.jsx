@@ -40,8 +40,8 @@ export default function Header({ typeUser, fezLogin, handleLogout }) {
                 <ul className={styles.navList}>
                     <MOTION.li variants={itemVariants} custom={1}>
                         <Link
-                        style={{textDecoration:'none'}}
-                         to="/" className={styles.navLink}>
+                            style={{ textDecoration: 'none' }}
+                            to="/" className={styles.navLink}>
                             <FiHome /> Home
                         </Link>
                     </MOTION.li>
@@ -49,8 +49,8 @@ export default function Header({ typeUser, fezLogin, handleLogout }) {
                     <MOTION.li variants={itemVariants} custom={2}>
                         {fezLogin ? (
                             <Link
-                            style={{textDecoration:'none'}}
-                             to="/" onClick={handleLogout} className={styles.navLink}>
+                                style={{ textDecoration: 'none' }}
+                                to="/" onClick={handleLogout} className={styles.navLink}>
                                 Sair
                             </Link>
                         ) : (
@@ -63,8 +63,8 @@ export default function Header({ typeUser, fezLogin, handleLogout }) {
                     {(typeUser != 0 || !fezLogin) && (
                         <MOTION.li variants={itemVariants} custom={3}>
                             <Link
-                            style={{textDecoration:'none'}}
-                             to="/allvacany" className={styles.navLink}>
+                                style={{ textDecoration: 'none' }}
+                                to="/allvacany" className={styles.navLink}>
                                 <FiBriefcase /> Vagas
                             </Link>
                         </MOTION.li>
@@ -73,8 +73,8 @@ export default function Header({ typeUser, fezLogin, handleLogout }) {
                     {(typeUser === 0 || typeUser === 2 || !fezLogin) && (
                         <MOTION.li variants={itemVariants} custom={4}>
                             <Link
-                            style={{textDecoration:'none'}}
-                             to="/vacany" className={styles.navLink}>
+                                style={{ textDecoration: 'none' }}
+                                to="/vacany" className={styles.navLink}>
                                 <FiPlusSquare /> Nova Vaga
                             </Link>
                         </MOTION.li>
@@ -83,8 +83,8 @@ export default function Header({ typeUser, fezLogin, handleLogout }) {
                     {!fezLogin ? (
                         <MOTION.li variants={itemVariants} custom={5}>
                             <Link
-                            style={{textDecoration:'none'}}
-                             to="/login">
+                                style={{ textDecoration: 'none' }}
+                                to="/login">
                                 <button className={styles.loginButton}>Login</button>
                             </Link>
                         </MOTION.li>

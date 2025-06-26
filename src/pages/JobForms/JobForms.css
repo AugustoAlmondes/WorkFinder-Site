@@ -109,28 +109,12 @@ input[type="radio"] {
     }
 }
 
-.job-info-2 {
-    width: 1000px;
-    margin-bottom: 20px;
-
-    p {
-        margin: 0;
-        font-size: 20px;
-        text-align: justify;
-        padding: 20px;
-    }
-
-    span {
-        font-size: 17px;
-        font-weight: 600;
-    }
-}
 
 .job-info {
     /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
     /* gap: 10px; */
-    width: 1000px;
+    /* width: 1000px; */
     margin: 20px 0;
     padding: 20px;
     background-color: rgb(233, 233, 233);

@@ -53,6 +53,7 @@ export default function Vacany({ listDataVvacany, fezLogin }) {
                                             pathname: "/infojob",
                                         }}
                                         state={{ jobData: listDataVvacany }}
+                                        style={{ textDecoration: 'none', color: 'inherit' }}
                                         className="acessar-card"
                                     >
                                         <h4>Acessar</h4>

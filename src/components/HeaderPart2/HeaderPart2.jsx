@@ -16,23 +16,6 @@ export default function HeaderPart2() {
         }
     };
 
-    const buttonVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                delay: 0.8,
-                duration: 0.8,
-                ease: "easeOut"
-            }
-        },
-        hover: {
-            scale: 1.1,
-            transition: { duration: 0.3 }
-        }
-    };
-
     return (
         <MOTION.div
             className={styles.heroSection}
@@ -49,13 +32,13 @@ export default function HeaderPart2() {
                     className={styles.heroImage}
                 />
             </MOTION.div>
-            <MOTION.button
+            {/* <MOTION.button
                 className={styles.ctaButton}
                 variants={buttonVariants}
                 whileHover="hover"
             >
                 Saiba Mais <FiArrowRight />
-            </MOTION.button>
+            </MOTION.button> */}
 
         </MOTION.div>
     );
