@@ -31,6 +31,7 @@ export default function Login({ setFezLogin, setTypeUser, setEmail }) {
         confirm_senha: ''
     });
 
+    
     const [dataEmpresa, setDataEmpresa] = useState(
         {
             nome_empresa: '',
