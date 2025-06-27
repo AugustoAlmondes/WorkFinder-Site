@@ -12,13 +12,14 @@ import ImagemSlot4 from '../../assets/1694615.png'
 import ImagemSlot5 from '../../assets/2645897.png'
 
 import './Home.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function Home({ fezLogin, typeUser, handleLogout }) {
 
 
 
     const [vaga, setVaga] = useState([]);
+    const sobreRef = useRef(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -34,9 +35,13 @@ export default function Home({ fezLogin, typeUser, handleLogout }) {
         getVagas();
     }, []);
 
+    const scrollToSobre = () => {
+        sobreRef.current.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <>
-            <Header typeUser={typeUser} fezLogin={fezLogin} handleLogout={handleLogout} />
+            <Header typeUser={typeUser} fezLogin={fezLogin} handleLogout={handleLogout} scrollToSobre={scrollToSobre} />
             <HeaderPart2 />
 
             <main>
@@ -62,7 +67,7 @@ export default function Home({ fezLogin, typeUser, handleLogout }) {
                                 <div className="vagas-grid">
 
                                     {vaga.map((vaga, index) => {
-                                        return index < 6 && <VagaCard key={index} data={vaga} fezlogin={fezLogin}/>
+                                        return index < 6 && <VagaCard key={index} data={vaga} fezlogin={fezLogin} />
                                     })}
 
                                 </div>
@@ -111,14 +116,14 @@ export default function Home({ fezLogin, typeUser, handleLogout }) {
                     }
                 </section>
 
-                <section className="part-2">
+                <section className="part-2" ref={sobreRef}>
 
                     <div id="sobreId" className="content-part2">
                         <div className="img-part-2">
                             <img src={progressoImagem} alt="progressoImagem" />
                         </div>
 
-                        <div className="info-part-2">
+                        <div className="info-part-2" >
                             <article>
                                 <div className="titulo-part2">
                                     <h3>

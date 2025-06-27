@@ -12,7 +12,7 @@ import {
 import styles from "./Header.module.css";
 import Logo from "../../assets/Logomarca.png";
 
-export default function Header({ typeUser, fezLogin, handleLogout }) {
+export default function Header({ typeUser, fezLogin, handleLogout, scrollToSobre }) {
     const itemVariants = {
         hidden: { opacity: 0, y: -20 },
         visible: (i) => ({
@@ -47,17 +47,11 @@ export default function Header({ typeUser, fezLogin, handleLogout }) {
                     </MOTION.li>
 
                     <MOTION.li variants={itemVariants} custom={2}>
-                        {fezLogin ? (
-                            <Link
-                                style={{ textDecoration: 'none' }}
-                                to="/" onClick={handleLogout} className={styles.navLink}>
-                                Sair
-                            </Link>
-                        ) : (
-                            <p className={styles.navLink} style={{ margin: 0 }}>
+                            <p className={styles.navLink} style={{ margin: 0, cursor: 'pointer' }} 
+                                onClick={scrollToSobre}
+                            >
                                 <FiInfo /> Sobre
                             </p>
-                        )}
                     </MOTION.li>
 
                     {(typeUser != 0 || !fezLogin) && (

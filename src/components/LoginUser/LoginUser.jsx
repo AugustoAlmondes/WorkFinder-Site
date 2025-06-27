@@ -16,8 +16,9 @@ export default function LoginUser({ dataLogin, handleChange, handleSubmit, handl
                         required
                         value={dataLogin.email}
                         onChange={handleChange}
+                        placeholder="Digite seu email"
                     />
-                    <label htmlFor="">Email</label>
+                    {/* <label htmlFor="">Email</label> */}
                 </div>
 
                 <div className="textbox-login">
@@ -28,8 +29,9 @@ export default function LoginUser({ dataLogin, handleChange, handleSubmit, handl
                         required
                         value={dataLogin.senha}
                         onChange={handleChange}
+                        placeholder="Digite sua senha"
                     />
-                    <label htmlFor="">Senha</label>
+                    {/* <label htmlFor="">Senha</label> */}
                 </div>
 
                 <div className="check-type">
