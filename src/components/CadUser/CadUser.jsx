@@ -1,4 +1,8 @@
 // import './none.css';
+import {
+    formatTelefone,
+    formatCEP
+} from '../../utils/masks';
 
 export default function LoginFrame({ dataUser, handleChange, handleSubmit, setFrameLogin }) {
     return (
@@ -15,8 +19,9 @@ export default function LoginFrame({ dataUser, handleChange, handleSubmit, setFr
                             required
                             value={dataUser.nome_completo}
                             onChange={handleChange}
+                            placeholder='Nome Completo'
                         />
-                        <label htmlFor="nome_Completo">Nome Completo</label>
+                        {/* <label htmlFor="nome_Completo">Nome Completo</label> */}
                     </div>
 
                     <div className="textbox">
@@ -27,8 +32,9 @@ export default function LoginFrame({ dataUser, handleChange, handleSubmit, setFr
                             required
                             value={dataUser.data_nascimento}
                             onChange={handleChange}
+                            
                         />
-                        <label htmlFor="data_nascimento">Data de Nascimento</label>
+                        {/* <label htmlFor="data_nascimento">Data de Nascimento</label> */}
                     </div>
 
                     <div className="textbox">
@@ -36,11 +42,14 @@ export default function LoginFrame({ dataUser, handleChange, handleSubmit, setFr
                             id="telefone_user"
                             name="telefone"
                             type="tel"
+                            maxLength={15}
+                            minLength={15}
                             required
-                            value={dataUser.telefone}
+                            value={formatTelefone(dataUser.telefone)}
                             onChange={handleChange}
+                            placeholder='Telefone'
                         />
-                        <label htmlFor="telefone">Número de telefone</label>
+                        {/* <label htmlFor="telefone">Número de telefone</label> */}
                     </div>
 
                     <div className="textbox">
@@ -48,11 +57,14 @@ export default function LoginFrame({ dataUser, handleChange, handleSubmit, setFr
                             id="cep_user"
                             name="cep"
                             type="text"
+                            minLength={9}
+                            maxLength={9}
                             required
-                            value={dataUser.cep}
+                            value={formatCEP(dataUser.cep)}
                             onChange={handleChange}
+                            placeholder='CEP'
                         />
-                        <label htmlFor="cep">CEP</label>
+                        {/* <label htmlFor="cep">CEP</label> */}
                     </div>
 
                     <div className="textbox">
@@ -63,8 +75,9 @@ export default function LoginFrame({ dataUser, handleChange, handleSubmit, setFr
                             required
                             value={dataUser.email}
                             onChange={handleChange}
+                            placeholder='E-mail'
                         />
-                        <label htmlFor="email">E-mail</label>
+                        {/* <label htmlFor="email">E-mail</label> */}
                     </div>
 
                     <div className="textbox">
@@ -75,8 +88,9 @@ export default function LoginFrame({ dataUser, handleChange, handleSubmit, setFr
                             required
                             value={dataUser.senha}
                             onChange={handleChange}
+                            placeholder='Senha'
                         />
-                        <label htmlFor="senha">Senha</label>
+                        {/* <label htmlFor="senha">Senha</label> */}
                     </div>
 
                     <div className="textbox">
@@ -87,8 +101,9 @@ export default function LoginFrame({ dataUser, handleChange, handleSubmit, setFr
                             required
                             value={dataUser.confirm_senha}
                             onChange={handleChange}
+                            placeholder='Confirmar Senha'
                         />
-                        <label htmlFor="confirm_senha">Confirmar Senha</label>
+                        {/* <label htmlFor="confirm_senha">Confirmar Senha</label> */}
                     </div>
                 </div>
                 <button id="confirmar_user" type="submit">

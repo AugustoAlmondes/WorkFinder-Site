@@ -75,14 +75,15 @@ export default function Login({ setFezLogin, setTypeUser, setEmail }) {
         const typeRegister = {
             typeAccount: frameLogin,
             data: frameLogin === 0 ? dataEmpresa : dataUser,
-            endpoint: `https://workfinder-api-production.up.railway.app/auth/register-${frameLogin === 0 ? 'firm' : 'user'}`
-            // endpoint: `http://localhost:3000/auth/register-${frameLogin === 0 ? 'firm' : 'user'}`
+            // endpoint: `https://workfinder-api-production.up.railway.app/auth/register-${frameLogin === 0 ? 'firm' : 'user'}`
+            endpoint: `http://localhost:3000/auth/register-${frameLogin === 0 ? 'firm' : 'user'}`
         };
 
+        
         if (typeRegister.data.senha !== typeRegister.data.confirm_senha) { // Use confirmSenha do seu state
             return toast.error("As senhas não coincidem!");
         }
-        // remover o confirm_senha do objeto
+
         delete typeRegister.data.confirm_senha;
 
         console.log("Enviando Dados:", typeRegister.data, "Para:", typeRegister.endpoint);
@@ -140,7 +141,8 @@ export default function Login({ setFezLogin, setTypeUser, setEmail }) {
             const senhaLogin = dataLogin.senha;
 
             const response = await axios.post(
-                `https://workfinder-api-production.up.railway.app/auth/login-${type_user}`,
+                // `https://workfinder-api-production.up.railway.app/auth/login-${type_user}`,
+                `http://localhost:3000/auth/login-${type_user}`,
                 {
                     email: emailLogin,
                     senha: senhaLogin
@@ -162,8 +164,8 @@ export default function Login({ setFezLogin, setTypeUser, setEmail }) {
             }
         }
         catch (error) {
-            console.error("Erro ao fazer login:", error);
-            toast.error("Erro ao fazer login. Verifique suas credenciais.");
+            console.error("Erro ao fazer login:", error.response.data.message);
+            toast.error(error.response.data.message);
             return;
         }
     };
@@ -192,7 +194,6 @@ export default function Login({ setFezLogin, setTypeUser, setEmail }) {
                                 <>
                                     <CadUser dataUser={dataUser} handleChange={handleChange} handleSubmit={handleRegister} setFrameLogin={setFrameLogin} />
                                 </>
-
 
                             ) : frameLogin === 2 ? // LOGIN
                                 (

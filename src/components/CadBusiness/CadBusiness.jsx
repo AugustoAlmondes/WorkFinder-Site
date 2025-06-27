@@ -1,4 +1,6 @@
 // import './none.css';
+import { formatCNPJ, formatTelefone, formatCEP } from '../../utils/masks';
+import { validPassword } from '../../utils/validPassword';
 
 export default function CadBusiness({ dataEmpresa, handleChange, handleSubmit }) {
     return (
@@ -16,8 +18,8 @@ export default function CadBusiness({ dataEmpresa, handleChange, handleSubmit })
                         required
                         value={dataEmpresa.nome_empresa}
                         onChange={handleChange}
+                        placeholder=' Nome da Empresa'
                     />
-                    <label htmlFor="">Nome da Empresa</label>
                 </div>
 
                 <div className="textbox">
@@ -29,8 +31,8 @@ export default function CadBusiness({ dataEmpresa, handleChange, handleSubmit })
                         required
                         value={dataEmpresa.nome_fantasia}
                         onChange={handleChange}
+                        placeholder=' Nome Fantasia'
                     />
-                    <label htmlFor="">Nome Fantasia</label>
                 </div>
 
                 <div className="textbox">
@@ -39,11 +41,18 @@ export default function CadBusiness({ dataEmpresa, handleChange, handleSubmit })
                         id="cnpj"
                         name="cnpj"
                         type="text"
+                        maxLength={14}
                         required
-                        value={dataEmpresa.cnpj}
+                        value={formatCNPJ(dataEmpresa.cnpj)}
                         onChange={handleChange}
+                        placeholder=' CNPJ'
                     />
-                    <label htmlFor="">CNPJ</label>
+                    {
+                        dataEmpresa.cnpj.length === 14 &&
+                        <p
+                            style={{ margin: '5px 0', color: 'green' }}
+                            className="cnpj-valid">CNPJ Valido</p>
+                    }
                 </div>
 
                 <div className="textbox">
@@ -52,11 +61,18 @@ export default function CadBusiness({ dataEmpresa, handleChange, handleSubmit })
                         id="inscricao_estadual"
                         name="inscricao_estadual"
                         type="text"
+                        maxLength={13}
                         required
                         value={dataEmpresa.inscricao_estadual}
                         onChange={handleChange}
+                        placeholder=' Inscrição Estadual'
                     />
-                    <label htmlFor="">Inscrição Estadual</label>
+                    {
+                        dataEmpresa.inscricao_estadual.length === 13 &&
+                        <p
+                            style={{ margin: '5px 0', color: 'green' }}
+                            className="inscricao-valid">Inscrição Estadual Valida</p>
+                    }
                 </div>
 
                 <div className="textbox">
@@ -66,25 +82,34 @@ export default function CadBusiness({ dataEmpresa, handleChange, handleSubmit })
                         name="inscricao_municipal"
                         type="text"
                         required
+                        maxLength={13}
+                        minLength={7}
                         value={dataEmpresa.inscricao_municipal}
                         onChange={handleChange}
+                    placeholder=' Inscrição Municipal'
                     />
-                    <label htmlFor="">Inscrição Municipal</label>
+                    {
+                        (dataEmpresa.inscricao_municipal.length > 6
+                            && dataEmpresa.inscricao_municipal.length < 14
+                        ) &&
+                        <p
+                            style={{ margin: '5px 0', color: 'green' }}
+                            className="inscricao-valid">Inscrição Municipal Valida</p>
+                    }
                 </div>
 
                 <div className="textbox">
-                    {/* <input type="tel" id="telefone"
-                                                    //  onkeyup="mascaraFone(event)" 
-                                                    className="input-padrao" required /> */}
                     <input
                         id="telefone"
                         name="telefone"
                         type="tel"
+                        maxLength={15}
+                        minLength={15}
                         required
-                        value={dataEmpresa.telefone}
+                        placeholder=' Telefone'
+                        value={formatTelefone(dataEmpresa.telefone)}
                         onChange={handleChange}
                     />
-                    <label htmlFor="">Telefone</label>
                 </div>
 
                 <div className="textbox">
@@ -92,12 +117,14 @@ export default function CadBusiness({ dataEmpresa, handleChange, handleSubmit })
                     <input
                         id="cep"
                         name="cep"
+                        minLength={9}
+                        maxLength={9}
                         type="text"
                         required
-                        value={dataEmpresa.cep}
+                        value={formatCEP(dataEmpresa.cep)}
                         onChange={handleChange}
+                        placeholder=' CEP'
                     />
-                    <label htmlFor="">CEP</label>
                 </div>
 
                 <div className="textbox">
@@ -109,8 +136,8 @@ export default function CadBusiness({ dataEmpresa, handleChange, handleSubmit })
                         required
                         value={dataEmpresa.endereco}
                         onChange={handleChange}
+                        placeholder=' Endereço'
                     />
-                    <label htmlFor="">Endereço</label>
                 </div>
 
                 <div className="textbox">
@@ -122,8 +149,8 @@ export default function CadBusiness({ dataEmpresa, handleChange, handleSubmit })
                         required
                         value={dataEmpresa.email}
                         onChange={handleChange}
+                        placeholder=' Email'
                     />
-                    <label htmlFor="">E-mail</label>
                 </div>
 
                 <div className="textbox">
@@ -132,11 +159,23 @@ export default function CadBusiness({ dataEmpresa, handleChange, handleSubmit })
                         id="senhaEmpresa"
                         name="senha"
                         type="password"
+                        minLength={8}
                         required
                         value={dataEmpresa.senha}
                         onChange={handleChange}
+                        placeholder=' Senha'
                     />
-                    <label htmlFor="">Senha</label>
+
+                    {
+                        validPassword(dataEmpresa.senha) ?
+                            <p
+                                style={{ margin: '0', color: 'green' }}
+                                className="senha-valid">Senha Válida</p> :
+                            dataEmpresa.senha.length > 0 &&
+                            <p
+                                style={{ margin: '0', color: 'red' }}
+                                className="senha-invalid">Tamanho minimo de 8 caracteres, letra maiúscula e um número</p>
+                    }
                 </div>
 
                 <div className="textbox">
@@ -144,11 +183,26 @@ export default function CadBusiness({ dataEmpresa, handleChange, handleSubmit })
                         id="confirmar_senha_empresa"
                         name="confirm_senha"
                         type="password"
+                        minLength={8}
                         required
+                        placeholder='Confirme a Senha'
                         value={dataEmpresa.confirm_senha}
                         onChange={handleChange}
                     />
-                    <label htmlFor="">Confirmar Senha</label>
+
+                    {
+                        dataEmpresa.senha === dataEmpresa.confirm_senha &&
+                        validPassword(dataEmpresa.senha) &&
+                        <p
+                            style={{ margin: '5px 0', color: 'green' }}
+                            className="senha-valid">Senha Válida</p>
+                    }
+                    {
+                        dataEmpresa.senha !== dataEmpresa.confirm_senha &&
+                        <p
+                            style={{ margin: '5px 0', color: 'red' }}
+                            className="senha-invalid">Senhas não conferem</p>
+                    }
                 </div>
                 <button type="submit">
                     Confirmar
