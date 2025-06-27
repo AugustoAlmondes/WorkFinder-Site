@@ -38,11 +38,13 @@
     font-size: 1rem;
     margin-bottom: 10px;
     line-height: 1.6;
+    color: black;
 }
 
 .job-info-2 span,
 .job-info span {
     font-weight: bold;
+    font-size: 1.2rem;
     color: #333;
 }
 

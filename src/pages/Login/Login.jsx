@@ -75,8 +75,8 @@ export default function Login({ setFezLogin, setTypeUser, setEmail }) {
         const typeRegister = {
             typeAccount: frameLogin,
             data: frameLogin === 0 ? dataEmpresa : dataUser,
-            // endpoint: `https://workfinder-api-production.up.railway.app/auth/register-${frameLogin === 0 ? 'firm' : 'user'}`
-            endpoint: `http://localhost:3000/auth/register-${frameLogin === 0 ? 'firm' : 'user'}`
+            endpoint: `https://workfinder-api-production.up.railway.app/auth/register-${frameLogin === 0 ? 'firm' : 'user'}`
+            // endpoint: `http://localhost:3000/auth/register-${frameLogin === 0 ? 'firm' : 'user'}`
         };
 
         
@@ -141,8 +141,8 @@ export default function Login({ setFezLogin, setTypeUser, setEmail }) {
             const senhaLogin = dataLogin.senha;
 
             const response = await axios.post(
-                // `https://workfinder-api-production.up.railway.app/auth/login-${type_user}`,
-                `http://localhost:3000/auth/login-${type_user}`,
+                `https://workfinder-api-production.up.railway.app/auth/login-${type_user}`,
+                // `http://localhost:3000/auth/login-${type_user}`,
                 {
                     email: emailLogin,
                     senha: senhaLogin

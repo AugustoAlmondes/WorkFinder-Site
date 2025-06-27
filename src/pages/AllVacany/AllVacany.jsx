@@ -17,6 +17,7 @@ export default function AllVacany({ typeUser, fezLogin, handleLogout }) {
     useEffect(() => {
         const getAllVacany = async () => {
             const response = await axios.get('https://workfinder-api-production.up.railway.app/vacany');
+            // const response = await axios.get('http://localhost:3000//vacany');
             // console.log(response.data);
             
             setListDataVacany(response.data);
@@ -33,7 +34,7 @@ export default function AllVacany({ typeUser, fezLogin, handleLogout }) {
     return (
         <>
         <Header typeUser={typeUser} fezLogin={fezLogin} handleLogout={handleLogout} />
-            <main>
+            <main style={{minHeight: "100vh"}}>
                 <div className="titulo-pagina-vaga">
                     <h1>Descubra Sua Próxima <span>Aventura Profissional!!</span></h1>
                 </div>

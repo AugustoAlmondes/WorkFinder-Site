@@ -134,3 +134,10 @@ p > .clique-aqui {
         width: 100%;
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .container-login {
+        padding: 0;
+    }
+    
+}
