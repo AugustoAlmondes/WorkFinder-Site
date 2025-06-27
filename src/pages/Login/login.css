@@ -51,6 +51,11 @@
     transition: 0.3s;
 }
 
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
 .textbox input:focus,
 .textbox-login input:focus {
     border-color: #fff;
