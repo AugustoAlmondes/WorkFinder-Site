@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer';
 
 import { toast, ToastContainer } from 'react-toastify';
 import { Link, useLocation } from 'react-router-dom';
-import { handleInputs } from '../../hooks/handleInputs';
+import { handleInputs } from '../../utils/handleInputs';
 import emailjs from 'emailjs-com';
 
 

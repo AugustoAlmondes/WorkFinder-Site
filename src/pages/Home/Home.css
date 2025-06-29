@@ -53,7 +53,7 @@
 
 .vermais-card button {
     width: 200px;
-    height: 50px;
+    /* height: 50px; */
     font-size: 16px;
     border-radius: 10px;
     background-color: transparent;
@@ -72,7 +72,7 @@
 .part-2 {
     min-height: 100vh;
     background-color: black;
-    background-image: url(../assets/imagem-part2.png);
+    background-image: url('../../assets/imagem-part2.png');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;

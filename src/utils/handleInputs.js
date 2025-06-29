@@ -16,37 +16,41 @@ export class handleInputs {
         e.target.value = value;
     }
 
-    cepMask(e){
+    cepMask(e) {
         let value = e.target.value;
         value = value.replace(/\D/g, '');
-        value= value.replace(/(\d{5})(\d)/, '$1-$2');
+        value = value.replace(/(\d{5})(\d)/, '$1-$2');
         e.target.value = value;
     }
 
-    cnpjMask(e)
-    {
+    cnpjMask(e) {
         let value = e.target.value;
         value = value.replace(/\D/g, '');
         value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5")
         e.target.value = value
     }
 
-    salaryMask(e){
+    salaryMask(e) {
         let value = e.target.value;
+
+        // Remove tudo que não for número
         value = value.replace(/\D/g, '');
-        value = value.replace(/(\d+)(\d{2})$/, "$1,$2");
-        value = value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
-        e.target.value = value;
+
+        // Formata com vírgula e pontos
+        value = value.replace(/(\d+)(\d{2})$/, '$1,$2');
+        value = value.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+
+        return value;
     }
 
-    stateRegistrationMask(e){
+    stateRegistrationMask(e) {
         let value = e.target.value;
         value = value.replace(/\D/g, '');
         value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{3})/, '$1.$2.$3.$4');
         e.target.value = value
     }
 
-    municipalRegistrationMask(e){
+    municipalRegistrationMask(e) {
         let value = e.target.value;
         value = value.replace(/\D/g, '');
         value = value.replace(/(\d{6})(\d)/, '$1-$2');

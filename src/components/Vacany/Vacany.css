@@ -4,6 +4,8 @@
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
+    justify-content: space-between;
+    height: 400px;  
     flex-direction: column;
     gap: 10px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -12,6 +14,15 @@
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.title{
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .foto-card h3{
@@ -31,6 +42,24 @@
     margin: 0;
 }
 
+.requisitos{
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.requisitos li{
+        white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #daa05e7a;
+    border-radius: 5px;
+    padding:0 10px;
+    height: max-content;
+    font-size: 0.9rem;
+    color: #555;
+    transition: background-color 0.3s ease;
+}
 .requisitos li,
 .info-vaga li {
     font-size: 0.95rem;

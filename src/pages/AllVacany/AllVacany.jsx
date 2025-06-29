@@ -5,7 +5,7 @@ import './AllVacany.css'
 import axios from "axios";
 
 import { useEffect, useState } from 'react';
-import searchJob from "../../hooks/searchJob";
+import searchJob from "../../utils/searchJob";
 
 export default function AllVacany({ typeUser, fezLogin, handleLogout }) {
 
@@ -19,7 +19,7 @@ export default function AllVacany({ typeUser, fezLogin, handleLogout }) {
             const response = await axios.get('https://workfinder-api-production.up.railway.app/vacany');
             // const response = await axios.get('http://localhost:3000//vacany');
             // console.log(response.data);
-            
+
             setListDataVacany(response.data);
         }
         getAllVacany();
@@ -33,8 +33,8 @@ export default function AllVacany({ typeUser, fezLogin, handleLogout }) {
 
     return (
         <>
-        <Header typeUser={typeUser} fezLogin={fezLogin} handleLogout={handleLogout} />
-            <main style={{minHeight: "100vh"}}>
+            <Header typeUser={typeUser} fezLogin={fezLogin} handleLogout={handleLogout} />
+            <main style={{ minHeight: "100vh" }}>
                 <div className="titulo-pagina-vaga">
                     <h1>Descubra Sua Próxima <span>Aventura Profissional!!</span></h1>
                 </div>
@@ -43,17 +43,16 @@ export default function AllVacany({ typeUser, fezLogin, handleLogout }) {
                         className="bi bi-search"></i></label></h2>
                     <form className="container-pesquisa" onSubmit={handleSearch}>
                         <input
-                        className="input-vaga" 
-                        type="text" 
-                        name="pesquisa-vaga" 
-                        id="pesquisa-vaga"
-                        placeholder="Digite a característica"
-                        onChange={(e)=> {
-                            if( e.target.value == '')
-                            {
-                                setSearchOn(false);
-                            }
-                        }}
+                            className="input-vaga"
+                            type="text"
+                            name="pesquisa-vaga"
+                            id="pesquisa-vaga"
+                            placeholder="Digite a característica"
+                            onChange={(e) => {
+                                if (e.target.value == '') {
+                                    setSearchOn(false);
+                                }
+                            }}
                         />
 
                         <button type="submit" className="botao-pesquisa-vaga" onClick={() => setSearchOn(true)}>Pesquisar</button>
@@ -62,11 +61,11 @@ export default function AllVacany({ typeUser, fezLogin, handleLogout }) {
 
                 <h4 className="subtitulo-vaga">Todas as Vagas</h4>
                 <div className="grid-vagas">
-                    { !searchOn ? (
+                    {!searchOn ? (
                         listDataVvacany.map((item, index) => (
                             <Vacany key={index} listDataVvacany={item} fezLogin={fezLogin} />
                         ))
-                    ): (
+                    ) : (
                         searchList.map((item, index) => (
                             <Vacany key={index} listDataVvacany={item} fezLogin={fezLogin} />
                         ))
@@ -75,7 +74,7 @@ export default function AllVacany({ typeUser, fezLogin, handleLogout }) {
                 </div>
             </main>
 
-            <Footer/>
+            <Footer />
         </>
     );
 }

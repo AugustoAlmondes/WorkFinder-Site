@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './JobForms.css'
 
-import { handleInputs } from '../../hooks/handleInputs'
+import { handleInputs } from '../../utils/handleInputs'
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
@@ -52,7 +52,14 @@ export default function JobForms({ typeUser, fezLogin, handleLogout, email }) {
     }
 
     function handleChange(e) {
-        const { name, value } = e.target;
+
+        
+        let { name, value } = e.target;
+
+        if (name === "salary") {
+            value = mask.salaryMask(e);  // Aplica a máscara e recebe o valor formatado
+        }
+
         setDataVacany(prevData => ({ ...prevData, [name]: value }))
     }
 
@@ -69,13 +76,13 @@ export default function JobForms({ typeUser, fezLogin, handleLogout, email }) {
                     };
                     newDataVacany = { ...payload, amount: Number(payload.amount) };
                 }
-                else{
+                else {
                     newDataVacany = { ...dataVacany, amount: Number(dataVacany.amount) };
                 }
                 console.log("Novos dados da vaga: ", newDataVacany);
                 const response = await axios.post('https://workfinder-api-production.up.railway.app/vacany/register', newDataVacany);
                 // const response = await axios.post('http://localhost:3000/vacany/register', newDataVacany);
-                
+
                 if (response.status === 201) {
                     toast.success("Vaga cadastrada com sucesso!");
                 }
@@ -287,7 +294,6 @@ export default function JobForms({ typeUser, fezLogin, handleLogout, email }) {
                                         required
                                         value={dataVacany.salary}
                                         onChange={handleChange}
-                                        onKeyUp={mask.salaryMask}
                                     />
                                 </div>
                                 <div className="form-group">

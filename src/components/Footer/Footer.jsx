@@ -73,7 +73,7 @@ export default function Footer() {
                 color: 'white'
             }}>
 
-                Copyright &copy; 2024 WorkFinder All Rights Reserved
+                Copyright &copy; 2025 WorkFinder All Rights Reserved
             </span>
             </footer>
             {/* <span style="text-align: center; background: #2f2010; color: white"> */}

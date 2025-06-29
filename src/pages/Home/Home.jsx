@@ -13,6 +13,7 @@ import ImagemSlot5 from '../../assets/2645897.png'
 
 import './Home.css';
 import { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Home({ fezLogin, typeUser, handleLogout }) {
 
@@ -73,9 +74,12 @@ export default function Home({ fezLogin, typeUser, handleLogout }) {
                                 </div>
 
                                 <div className="vermais-card">
-                                    <button>
-                                        Ver mais vagas
-                                    </button>
+                                    <Link to={'/allvacany'}>
+                                        <button>
+                                            Ver mais vagas
+                                        </button>
+                                    </Link>
+
                                 </div>
                             </>
                         ) :
@@ -160,9 +164,9 @@ export default function Home({ fezLogin, typeUser, handleLogout }) {
                                 {
                                     typeUser != 0 ?
                                         (
-                                            <button className="olhar-Vagas">Olhar Vagas</button>
+                                            <Link to={'/allvacany'}> <button className="olhar-Vagas">Olhar Vagas</button></Link>
                                         ) : (
-                                            <button className="olhar-Vagas">Cadastrar Vagas</button>
+                                            <Link to={'/vacany'}> <button className="olhar-Vagas">Cadastrar Vagas</button></Link>
                                         )
                                 }
                                 {
@@ -170,7 +174,7 @@ export default function Home({ fezLogin, typeUser, handleLogout }) {
                                         (
                                             <button className="registar-se">Ver Perfil</button>
                                         ) : (
-                                            <button className="registar-se">Cadastre-se</button>
+                                            <Link to={'/login'} className="registar-se"><button>Cadastre-se</button></Link>
                                         )
                                 }
                             </div>

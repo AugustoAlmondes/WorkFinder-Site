@@ -28,7 +28,7 @@ export default function Vacany({ listDataVvacany, fezLogin }) {
                         <h3 className="default_pointer_cs">{listDataVvacany.enterprise}</h3>
                     </div>
 
-                    <h4 className="default_pointer_cs">{listDataVvacany.title}</h4>
+                    <h4 className="title default_pointer_cs">{listDataVvacany.title}</h4>
 
                     <ul className="requisitos default_pointer_cs">
                         <li className="default_pointer_cs">{listDataVvacany.contractType}</li>

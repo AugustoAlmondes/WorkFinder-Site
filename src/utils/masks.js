@@ -33,3 +33,20 @@ export function formatInscricaoMunicipal(im) {
         .replace(/\D/g, '') // Remove non-numeric characters
         .replace(/^(\d{6})(\d{3})$/, '$1-$2');
 }
+
+export function formatSalario(salario) {
+    if (!salario) return '0,00';
+
+    let clean = salario.toString().replace(/\D/g, '');
+
+    if (clean.length < 3) {
+        clean = clean.padStart(3, '0');
+    }
+
+    let centavos = clean.slice(-2);
+    let inteiro = clean.slice(0, -2);
+
+    inteiro = inteiro.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+    return `${inteiro},${centavos}`;
+}
