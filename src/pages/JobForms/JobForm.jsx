@@ -199,7 +199,7 @@ export default function JobForms({ typeUser, fezLogin, handleLogout, email }) {
                                     >
                                         <option value="none">Selecione uma opção</option>
                                         <option value="presencial">Presencial</option>
-                                        <option value="ead">Home Office</option>
+                                        <option value="home office">Home Office</option>
                                         <option value="hibrido">Híbrido</option>
                                     </select>
                                 </div>
