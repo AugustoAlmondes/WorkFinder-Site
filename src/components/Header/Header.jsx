@@ -1,5 +1,5 @@
 import { motion as MOTION } from "motion/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
     FiUser,
     FiSettings,
@@ -9,10 +9,15 @@ import {
     FiBriefcase,
     FiPlusSquare
 } from "react-icons/fi";
+
+
 import styles from "./Header.module.css";
 import Logo from "../../assets/Logomarca.png";
 
 export default function Header({ typeUser, fezLogin, handleLogout, scrollToSobre }) {
+
+    const navigate = useNavigate();
+
     const itemVariants = {
         hidden: { opacity: 0, y: -20 },
         visible: (i) => ({
@@ -95,7 +100,10 @@ export default function Header({ typeUser, fezLogin, handleLogout, scrollToSobre
                                     <a href="#" className={styles.dropdownItem}>
                                         Configurações <FiSettings />
                                     </a>
-                                    <a href="#" className={styles.dropdownItem} onClick={handleLogout}>
+                                    <a href="#" className={styles.dropdownItem} onClick={() =>{
+                                        handleLogout
+                                        navigate('/login');
+                                        }}>
                                         Sair <FiLogOut />
                                     </a>
                                 </div>
