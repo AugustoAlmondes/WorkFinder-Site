@@ -1,6 +1,6 @@
 # WorkFinder
 
-WorkFinder é uma aplicação desenvolvida para [objetivo do projeto: exemplo, conectar freelancers a oportunidades de trabalho], construída com **React** e **Vite** para uma experiência de desenvolvimento rápida e eficiente.
+WorkFinder é uma aplicação desenvolvida para cadastro e aplicação de vagas de trabalho, construída com **React** e **Vite** para uma experiência de desenvolvimento rápida e eficiente.
 
 ## Funcionalidades
 
@@ -11,17 +11,6 @@ WorkFinder é uma aplicação desenvolvida para [objetivo do projeto: exemplo, c
 
 ## Tecnologias Utilizadas
 
-- **Frontend**: React, Vite
-- **Backend**: [detalhe do backend se houver]
-- **Controle de Qualidade**: ESLint, com configuração personalizada em `eslint.config.js`
+- **Frontend**: React e Vite
+- **Backend**: Node.js, NextJS e Prisma
 
-## Como Rodar o Projeto
-
-### Pré-requisitos
-- Node.js (>= versão necessária)
-- npm ou yarn
-
-### Passos para Rodar
-1. Clone o repositório:
-   
-   git clone [URL do repositório]
